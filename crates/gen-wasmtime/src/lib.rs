@@ -1884,7 +1884,7 @@ impl Bindgen for FunctionBindgen<'_> {
                 // ... and then copy over the result.
                 let mem = self.memory_src();
                 self.push_str(&format!(
-                    "{}.store_many({}, {}.as_bytes())?;\n",
+                    "{}.store_many({}, unsafe {{ {}.as_slice() }})?;\n",
                     mem, ptr, val
                 ));
                 self.gen.needs_raw_mem = true;

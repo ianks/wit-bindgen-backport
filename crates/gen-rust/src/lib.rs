@@ -199,7 +199,7 @@ pub trait RustGenerator {
                 TypeMode::AllBorrowed(lt) | TypeMode::LeafBorrowed(lt) => {
                     self.print_borrowed_str(lt)
                 }
-                TypeMode::Owned | TypeMode::HandlesBorrowed(_) => self.push_str("String"),
+                TypeMode::Owned | TypeMode::HandlesBorrowed(_) => self.push_str("magnus::RString"),
             },
         }
     }
