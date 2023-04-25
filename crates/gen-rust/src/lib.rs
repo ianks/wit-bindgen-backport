@@ -508,7 +508,7 @@ pub trait RustGenerator {
             let lt = self.lifetime_for(&info, mode);
             self.rustdoc(docs);
             if !info.owns_data() {
-                self.push_str("#[repr(u8)]\n");
+                self.push_str("#[repr(C)]\n");
                 self.push_str("#[derive(Copy, Clone)]\n");
             } else if !info.has_handle {
                 self.push_str("#[derive(Clone)]\n");
