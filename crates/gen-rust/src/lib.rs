@@ -618,7 +618,7 @@ pub trait RustGenerator {
             } else if !info.has_handle {
                 self.push_str("#[derive(Clone)]\n");
             }
-            self.push_str("#[repr(u32)]\n");
+            self.push_str("#[repr(packed)]\n");
             self.push_str(&format!("pub enum {name}"));
             self.print_generics(&info, lt, true);
             self.push_str("{\n");
