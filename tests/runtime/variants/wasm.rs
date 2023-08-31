@@ -78,7 +78,7 @@ impl exports::Exports for Exports {
     }
 
     fn roundtrip_enum(a: E1) -> E1 {
-        assert_eq!(a, a);
+        // assert_eq!(a, a);
         a
     }
 

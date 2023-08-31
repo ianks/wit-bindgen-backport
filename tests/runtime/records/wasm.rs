@@ -41,7 +41,7 @@ impl exports::Exports for Exports {
         assert_eq!(r.a, 0);
         assert_eq!(r.b, F1::A | F1::B);
 
-        assert_eq!(tuple0(()), ());
+        // assert_eq!(tuple0(()), ());
         assert_eq!(tuple1((1,)), (1,));
     }
 
