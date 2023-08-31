@@ -51,6 +51,7 @@ impl Imports for MyImports {
 
 wit_bindgen_wasmtime::import!("../../tests/runtime/records/exports.wit");
 
+#[allow(clippy::unit_cmp)]
 fn run(wasm: &str) -> Result<()> {
     use exports::*;
 
