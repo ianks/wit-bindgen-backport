@@ -19,6 +19,7 @@ impl Imports for MyImports {
         }
     }
 
+    #[allow(clippy::eq_op)]
     fn roundtrip_enum(&mut self, a: E1) -> E1 {
         assert_eq!(a, a);
         a
