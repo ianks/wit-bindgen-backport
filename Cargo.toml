@@ -8,7 +8,6 @@ edition = "2018"
 members = [
   "crates/test-rust-wasm",
   "crates/wit-bindgen-demo",
-  "crates/wit-component",
 ]
 resolver = "2"
 
