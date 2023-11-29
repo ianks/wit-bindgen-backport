@@ -10,7 +10,7 @@ pub struct MyImports;
 
 impl Imports for MyImports {
     fn empty_list_param(&mut self, a: &[u8]) {
-        assert_eq!(a, []);
+        assert_eq!(a, &[]);
     }
 
     fn empty_string_param(&mut self, a: &str) {
@@ -157,7 +157,7 @@ fn run(wasm: &str) -> Result<()> {
     exports.test_imports(&mut store)?;
     exports.empty_list_param(&mut store, &[])?;
     exports.empty_string_param(&mut store, "")?;
-    assert_eq!(exports.empty_list_result(&mut store)?, []);
+    assert_eq!(exports.empty_list_result(&mut store)?, &[]);
     assert_eq!(exports.empty_string_result(&mut store)?, "");
     exports.list_param(&mut store, &[1, 2, 3, 4])?;
     exports.list_param2(&mut store, "foo")?;
