@@ -1670,7 +1670,6 @@ dependencies = [
  "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
- "wit-bindgen-gen-wasmtime-py",
  "wit-parser 0.2.0",
 ]
 
@@ -2730,7 +2729,6 @@ dependencies = [
  "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
- "wit-bindgen-gen-wasmtime-py",
 ]
 
 [[package]]
@@ -2745,7 +2743,6 @@ dependencies = [
  "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
- "wit-bindgen-gen-wasmtime-py",
  "wit-bindgen-rust",
 ]
 
@@ -2833,16 +2830,6 @@ dependencies = [
  "wit-bindgen-gen-core",
  "wit-bindgen-gen-rust",
  "wit-bindgen-wasmtime",
-]
-
-[[package]]
-name = "wit-bindgen-gen-wasmtime-py"
-version = "0.2.0"
-dependencies = [
- "heck 0.3.3",
- "structopt",
- "test-helpers",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]

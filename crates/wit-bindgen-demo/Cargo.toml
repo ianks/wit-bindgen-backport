@@ -14,7 +14,6 @@ doctest = false
 wit-bindgen-gen-core = { path = '../gen-core' }
 wit-bindgen-gen-rust-wasm = { path = '../gen-rust-wasm' }
 wit-bindgen-gen-wasmtime = { path = '../gen-wasmtime' }
-wit-bindgen-gen-wasmtime-py = { path = '../gen-wasmtime-py' }
 wit-bindgen-gen-js = { path = '../gen-js' }
 wit-bindgen-gen-c = { path = '../gen-c' }
 wit-bindgen-gen-markdown = { path = '../gen-markdown' }

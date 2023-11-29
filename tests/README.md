@@ -26,7 +26,6 @@ test, and if a file is missing then it's skipped when running other tests. Each
 
 * `host.rs` - executes wasms with Wasmtime
 * `host.js` - executes WebAssembly with node.js
-* `host.py` - executes with `wasmtime`'s PyPI package.
 
 Each of these hosts can also be omitted if the host doesn't implement the test
 or something like that. Otherwise for each host that exists when the host's
