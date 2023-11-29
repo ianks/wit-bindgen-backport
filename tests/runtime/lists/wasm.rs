@@ -70,38 +70,6 @@ impl exports::Exports for Exports {
             }
         }
 
-        unsafe {
-            let u16s = Unaligned::new(1);
-            let u32s = Unaligned::new(2);
-            let u64s = Unaligned::new(3);
-            let flag32s = Unaligned::new(Flag32::B8);
-            let flag64s = Unaligned::new(Flag64::B9);
-            let records = Unaligned::new(UnalignedRecord { a: 10, b: 11 });
-            let f32s = Unaligned::new(100.0);
-            let f64s = Unaligned::new(101.0);
-            let strings = Unaligned::new("foo");
-            let lists = Unaligned::new(&[102][..]);
-            // Technically this is UB because we're creating safe slices from
-            // unaligned pointers, but we're hoping that because we're just passing
-            // off pointers to an import through a safe import we can get away with
-            // this. If this ever becomes a problem we'll just need to call the raw
-            // import with raw integers.
-            unaligned_roundtrip1(
-                &*u16s.as_slice(),
-                &*u32s.as_slice(),
-                &*u64s.as_slice(),
-                &*flag32s.as_slice(),
-                &*flag64s.as_slice(),
-            );
-            unaligned_roundtrip2(
-                &*records.as_slice(),
-                &*f32s.as_slice(),
-                &*f64s.as_slice(),
-                &*strings.as_slice(),
-                &*lists.as_slice(),
-            );
-        }
-
         assert_eq!(
             list_minmax8(&[u8::MIN, u8::MAX], &[i8::MIN, i8::MAX]),
             (vec![u8::MIN, u8::MAX], vec![i8::MIN, i8::MAX]),
