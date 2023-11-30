@@ -112,12 +112,6 @@ to follow the canonical ABI for their exports/imports:
   itself to WebAssembly and publish NPM packages for popular JS build systems to
   integrate `wit-bindgen` into JS build processes.
 
-* `wasmtime-py` - this is for Python users using the `wasmtime` PyPI package.
-  This uses Wasmtime under the hood but you get to write Python in providing
-  imports to WebAssembly modules or consume modules using interface types. This
-  generates a `*.py` file which is annotated with types for usage in `mypy` or
-  other type-checkers.
-
 All generators support the `--import` and `--export` flags in the `wit-bindgen`
 CLI tool:
 

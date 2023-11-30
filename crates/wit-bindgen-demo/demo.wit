@@ -10,7 +10,6 @@ enum lang {
   js,
   rust,
   wasmtime,
-  wasmtime-py,
   c,
   markdown,
   spidermonkey,
