@@ -628,8 +628,7 @@ impl Generator for Wasmtime {
         for (name, func) in needs_functions {
             self.src.push_str(&format!(
                 "
-                    let func = get_func(&mut caller, \"{name}\")?;
-                    let func_{name} = func.typed::<{cvt}>(&caller)?;
+                    let func_{name} = get_func::<_, {cvt}>(&mut caller, \"{name}\")?;
                 ",
                 name = name,
                 cvt = func.cvt(),
@@ -800,7 +799,6 @@ impl Generator for Wasmtime {
             }
             self.src.push_str("pub trait ");
             self.src.push_str(&module_camel);
-            self.src.push_str(": Sized ");
             if is_async {
                 self.src.push_str(" + Send");
             }
