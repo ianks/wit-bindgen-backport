@@ -53,10 +53,7 @@ impl<'a> BorrowChecker<'a> {
             // * The region `r` we're returning accurately describes the
             //   slice we're returning in wasm linear memory.
             unsafe {
-                std::slice::from_raw_parts(
-                    self.ptr.add(r.start as usize) as *const T,
-                    len as usize,
-                )
+                std::slice::from_raw_parts(self.ptr.add(r.start as usize) as *const T, len as usize)
             },
             r,
         ))

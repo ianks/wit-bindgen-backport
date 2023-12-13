@@ -90,7 +90,10 @@ pub mod rt {
         }
     }
 
-    pub fn get_func<T, Args: WasmParams, Results: WasmResults>(caller: &mut Caller<'_, T>, func: &str) -> anyhow::Result<TypedFunc<Args, Results>> {
+    pub fn get_func<T, Args: WasmParams, Results: WasmResults>(
+        caller: &mut Caller<'_, T>,
+        func: &str,
+    ) -> anyhow::Result<TypedFunc<Args, Results>> {
         let func = caller
             .get_export(func)
             .ok_or_else(|| {
@@ -98,9 +101,7 @@ pub mod rt {
                 anyhow::anyhow!(msg)
             })?
             .into_func()
-            .map(|f| unsafe {
-                TypedFunc::new_unchecked(f)
-            })
+            .map(|f| unsafe { TypedFunc::new_unchecked(f) })
             .ok_or_else(|| {
                 let msg = format!("`{}` export not a function", func);
                 anyhow::anyhow!(msg)
